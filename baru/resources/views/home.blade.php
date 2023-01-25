@@ -1,11 +1,11 @@
 {{-- @extends('layouts.app',['title'=>'Homepage']) --}}
 {{-- @section('title','Homepage') --}}
-@section('content')
+@section('content',['title'=>'Home'])
 
 {{-- @include('components.alert') --}}
 {{-- @component('components.alert',['title'=>'Header component']) --}}
 {{-- <x-alert> --}}
-@component('components.alert')
+<x-alert>
 
 {{-- <x-slot class="title"> --}}
 @slot('title')
@@ -21,7 +21,8 @@ Footer Component
 
 @endslot
 
-@endcomponent
+</x-alert>
+<x-navbar></x-navbar>
 {{-- </x-alert> --}}
 
 This is Home.

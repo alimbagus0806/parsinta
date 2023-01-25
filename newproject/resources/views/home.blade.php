@@ -5,7 +5,7 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias aliquam, velit error dolor perferendis unde fuga nostrum adipisci dignissimos eos iste vero, sapiente sed, porro quae assumenda omnis voluptates quos!</p>   
 @endsection
 
-@section('blog')
+{{-- @section('blog')
     <h1>blog</h1>
     <div class="row align-items-md-stretch">
         <div class="col-md-6">
@@ -29,4 +29,4 @@
             </div>
         </div>
     </div>
-@endsection
+@endsection --}}
