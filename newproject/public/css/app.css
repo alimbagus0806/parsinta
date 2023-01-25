@@ -2,7 +2,6 @@ body {
     background-color: #000;
     color: white;
     font-family: sans-serif;
-    padding: 10px;
 }
 
 a {
@@ -17,10 +16,18 @@ a:hover {
 
 .navbar {
     display: flex;
+    padding: 1rem;
+    
     list-style-type: none;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar li a {
-    padding: 10px;
+    padding-top: 5px;
+    padding-right: 30px;
+    padding-bottom: 5px;
+    padding-left: 30px;
     display: inline-block;
 } 
