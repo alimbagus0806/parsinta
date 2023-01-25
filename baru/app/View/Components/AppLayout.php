@@ -1,20 +1,19 @@
 <?php
 
-namespace App\View\Components\Layouts;
+namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class App extends Component
+class AppLayout extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public $title;
-    public function __construct($title)
+    public function __construct()
     {
-       $this-> title = $title; 
+        //
     }
 
     /**
@@ -24,6 +23,6 @@ class App extends Component
      */
     public function render()
     {
-        return view('layouts.app');
+        return view('components.app-layout');
     }
 }

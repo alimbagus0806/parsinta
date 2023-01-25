@@ -4,10 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        {{-- <title>Home | {{ $appName }}</title> --}}
-        {{-- <title>@yield('title') | Parsinta</title> --}}
-        <title> {{ $title }} | Parsinta</title>
-        {{-- <!-- Fonts -->
+        <title>Laravel</title>
+
+        <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
         <!-- Styles -->
@@ -19,10 +18,9 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
-        </style> --}}
-        <link rel="stylesheet" href= "{{ asset('css/app.css')}}">
+        </style>
     </head>
-    {{-- <body class="antialiased">
+    <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -130,11 +128,5 @@
                 </div>
             </div>
         </div>
-    </body> --}}
-    <body>
-        <x-navbar></x-navbar>
-        <x-applayouts></x-applayouts>
-        @yield('content')
-        <script src="{{ asset('js/app.js')}}"></script>
     </body>
 </html>
