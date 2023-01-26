@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TaskController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
@@ -10,7 +11,15 @@ use Illuminate\Support\Facades\Route;
 Route::get ('/', function() {
     return view('home');
 } );
-Route::view ('profile', 'profile');
+Route::get('profile', function (Request $request) {
+
+    // Route::get('profile/{$username}', function ($username) { 
+    // $name = $_GET['name'];
+    $name = $request -> name;
+    // return "My name is {$name}";
+        return view ('profile', ['name' => $name]);
+
+});
 Route::view ('contact', 'contact');
 Route::view ('about', 'about');
 Route::view ('blog', 'blog');
