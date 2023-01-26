@@ -1,16 +1,23 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get ('/', function() {
-    return view('home');
-} );
+// Route::get ('/', function() {
+//     return view('home');
+// } );
+
+Route::get('/', HomeController::class);
+Route::get('contact', [ContactController::class, 'create']);
+Route::post('contact', [ContactController::class, 'store']);
+
+
 Route::get('profile', function (Request $request) {
 
     // Route::get('profile/{$username}', function ($username) { 
@@ -20,9 +27,9 @@ Route::get('profile', function (Request $request) {
         return view ('profile', ['name' => $name]);
 
 });
-Route::view ('contact', 'contact');
+// Route::view ('contact', 'contact');
 Route::view ('about', 'about');
 Route::view ('blog', 'blog');
-Route::view ('posts/first-post', 'posts.show');
+// Route::view ('posts/first-post', 'posts.show');
 
 Route::get ('tasks', [TaskController::class, 'index']);
