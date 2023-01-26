@@ -1,9 +1,25 @@
-@extends ('layouts.app', ['title' => 'Beranda',])
+@extends ('layouts.app', ['title' => 'Beranda'])
 
 @section('konten')
-    <h1>Beranda</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias aliquam, velit error dolor perferendis unde fuga nostrum adipisci dignissimos eos iste vero, sapiente sed, porro quae assumenda omnis voluptates quos!</p>   
+
+@section ('styles')
+<style>
+    body {
+        background-color: rgb(0, 130, 111);
+    }
+</style>
 @endsection
+
+    <h1>Beranda</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias aliquam, velit error dolor perferendis unde fuga nostrum adipisci dignissimos eos iste vero, sapiente sed, porro quae assumenda omnis voluptates quos!</p>      
+
+@endsection 
+
+{{-- <x-app-layouts></x-app-layouts> --}}
+
+    {{-- <h1>Beranda</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias aliquam, velit error dolor perferendis unde fuga nostrum adipisci dignissimos eos iste vero, sapiente sed, porro quae assumenda omnis voluptates quos!</p> --}}
+
 
 {{-- @section('blog')
     <h1>blog</h1>
