@@ -10,7 +10,7 @@
 </style>
 @endsection
 
-    <h1>{{ $name?? 'Profile' }}</h1>
+    <h1>{{ $username?? 'Profile' }}</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias aliquam, velit error dolor perferendis unde fuga nostrum adipisci dignissimos eos iste vero, sapiente sed, porro quae assumenda omnis voluptates quos!</p>      
 
 @endsection
