@@ -12,15 +12,6 @@
 </form>
 
 
-
-    
-
-
-   
-
- 
-
-
 @endsection
 
 

@@ -16,7 +16,23 @@
     <ol style= "list-style-type: none">
         <div style="margin-bottom : 10px"><a href="tasks/create">Create New Task</a></div>
         @foreach ($tasks as $index =>  $task)
-            <li>{{ $index + 1 }} - {{ $task->list }} - <a href="/tasks/{{ $task ->id }}/edit">edit</a></li>
+            <li style="margin-bottom: 15px" >
+                
+                {{ $index + 1 }} - {{ $task->list }} 
+                
+                <div>
+
+                    <a href="/tasks/{{ $task ->id }}/edit">edit</a>
+
+                        <form action="/tasks/{{ $task -> id }}" method="post" style= "display: inline">
+                        @csrf
+                        @method ('delete')
+                        <button type="submit">delete</button>
+                        </form>
+
+                </div>
+            
+            </li>
         @endforeach
 
     </ol>
