@@ -17,7 +17,7 @@ use App\Http\Controllers\ProfileInformationController;
 Route::get('/', HomeController::class);
 Route::get('contact', [ContactController::class, 'create']);
 Route::post('contact', [ContactController::class, 'store']);
-Route::get('profile/{identifier}', [ProfileInformationController::class, '__invoke']);
+Route::get('profile', [ProfileInformationController::class, '__invoke']);
 
 // Route::get('profile', function (Request $request) {
 
@@ -34,5 +34,9 @@ Route::view ('blog', 'blog');
 // Route::view ('posts/first-post', 'posts.show');
 
 Route::get ('tasks', [TaskController::class, 'index']);
-Route::get ('tasks', [TaskController::class, 'create']);
+Route::get ('tasks/create', [TaskController::class, 'create']);
+
 Route::post ('tasks', [TaskController::class, 'store']);
+
+Route::get ('tasks/{id}/edit', [TaskController::class, 'edit']);
+Route::put ('tasks/{id}', [TaskController::class, 'update']);
