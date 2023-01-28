@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\Task;
+// use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
 {
     public function index()
     {
-        $tasks = DB::table('tasks')->orderBy('id', 'desc')->get();
+        $tasks = Task::orderBy('id', 'asc')->get();
         return view('tasks.index', compact('tasks'));
     }
 
@@ -27,7 +27,7 @@ class TaskController extends Controller
 
     public function store(Request $request)
     {
-        DB::table('tasks')->insert([
+        Task::create([
             'list' => $request->list,
         ]);
 // dd ("submitted");
@@ -38,8 +38,8 @@ class TaskController extends Controller
     {
 
         // dd($id);
-       $task = DB::table('tasks')->where('id', $id)->first();
-       
+    //    $task = Task::where('id', $id)->first();
+        $task = Task::find($id);
        return view('tasks.edit', ['task' => $task]);
     }
 
@@ -47,7 +47,7 @@ class TaskController extends Controller
     {
 
         // dd($id);
-       $task = DB::table('tasks')->where('id', $id)->update(['list'=>$request->list]);
+        Task::find($id)->update(['list'=>$request->list]);
        
        return redirect('tasks');
 
@@ -56,7 +56,7 @@ class TaskController extends Controller
     {
 
         // dd($id);
-     DB::table('tasks')->where('id', $id)->delete();
+     Task::find($id)->delete();
        
     return back();
 
