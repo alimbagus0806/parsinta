@@ -23,6 +23,17 @@ class navbar extends Component
      */
     public function render()
     {
+        $navbar =[
+            'Home' => '/',
+            'About' => '/about',
+            'Contact' => '/contact',
+            'Profile' => '/profile',
+            'Task' => '/task',
+        ];
+
+
+
+
         return view('components.navbar');
     }
 }

@@ -9,7 +9,7 @@ class TaskController extends Controller
 {
     public function index()
     {
-        $tasks = Task::orderBy('id', 'asc')->get();
+        $tasks = Task::orderBy('id', 'desc')->get();
         return view('tasks.index', compact('tasks'));
     }
 
@@ -27,9 +27,10 @@ class TaskController extends Controller
 
     public function store(Request $request)
     {
-        Task::create([
-            'list' => $request->list,
-        ]);
+        Task::create($request->all());
+        // Task::create([
+        //     'list' => $request->list,
+        // ]);
 // dd ("submitted");
         return redirect('tasks');
     }

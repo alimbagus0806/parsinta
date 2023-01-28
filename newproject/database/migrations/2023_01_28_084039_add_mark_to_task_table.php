@@ -14,7 +14,7 @@ class AddMarkToTaskTable extends Migration
     public function up()
     {
         Schema::table('task', function (Blueprint $table) {
-            $table->boolean('mark')->after('list')->default(false);
+            $table->boolean('mark')->default(false)->after('list');
         });
     }
 
