@@ -14,8 +14,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    
           
-            @foreach ($navbar as $name -> $url)
+            @foreach ($title as $name -> $url)
                 <li class="nav-item">
                     <a href="{{ $url }}" class="nav-link">{{ $name }}</a>
                 </li>
