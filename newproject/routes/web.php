@@ -30,7 +30,7 @@ Route::get('profile', [ProfileInformationController::class, '__invoke']);
 // });
 // Route::view ('contact', 'contact');
 Route::view ('about', 'about');
-Route::view ('blog', 'blog');
+// Route::view ('blog', 'blog');
 // Route::view ('posts/first-post', 'posts.show');
 
 Route::get ('tasks', [TaskController::class, 'index']);
