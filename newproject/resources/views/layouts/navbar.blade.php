@@ -14,9 +14,6 @@
         <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
         <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
         <li class="nav-item"><a href="/tasks" class="nav-link">Tasks</a></li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
