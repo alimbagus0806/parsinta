@@ -3,32 +3,48 @@
 {{-- @section ('konten', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore repellat expedita iusto eligendi qui neque, placeat quasi ut quis sequi temporibus nulla quas eveniet ea consectetur suscipit dicta explicabo. Architecto.') --}}
 
 @section('konten')
-<h1>Tasks</h1>
-<form action="/tasks" method="post">
-    
-    @csrf
-    <input type="text" name="list" placeholder="The name of the task">
 
-    <button type="submit">Add</button>
-</form>
+<div class="container">
+<div class="row">
 
+    <div class="col-md-6">
 
+        <div class="card">
+            <div class="card-header"> Create New Task</div>    
+              <div class="card-body"> 
+                    <form action="/tasks" method="post" class="d-flex">
+            
+                        @csrf
+                        
+                        <input type="text" name="list" class= "form-control me-2" placeholder="The name of the task">
+        
+                        
+                        <button class="btn btn-primary" type="submit">Add</button>
+        
+                    </form>
+        
+              </div>
+        </div>
 
-    <ol style= "list-style-type: none">
+    </div>
+
+</div>
+
+    <ol class="list-group">
         <div style="margin-bottom : 10px"><a href="tasks/create">Create New Task</a></div>
         @foreach ($tasks as $index =>  $task)
-            <li style="margin-bottom: 15px" >
+            <li class="list-group-item d-flex align-items-center justfy-content-between">
                 
                 {{ $index + 1 }} - {{ $task->list }} 
                 
-                <div>
+                <div class= "d-flex">
 
-                    <a href="/tasks/{{ $task ->id }}/edit">edit</a>
+                    <a class="btn btn-primary me-2"  href="/tasks/{{ $task ->id }}/edit">edit</a>
 
-                        <form action="/tasks/{{ $task -> id }}" method="post" style= "display: inline">
+                        <form action="/tasks/{{ $task -> id }}" method="post">
                         @csrf
                         @method ('delete')
-                        <button type="submit">delete</button>
+                        <button class= "btn btn-danger" type="submit">delete</button>
                         </form>
 
                 </div>
@@ -37,7 +53,7 @@
         @endforeach
 
     </ol>
-
+</div>
 
    
 
