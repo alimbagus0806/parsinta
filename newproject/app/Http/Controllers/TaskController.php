@@ -35,12 +35,12 @@ class TaskController extends Controller
         return redirect('tasks');
     }
 
-    public function edit($id)
+    public function edit(Task $task)
     {
 
         // dd($id);
     //    $task = Task::where('id', $id)->first();
-        $task = Task::find($id);
+        // $task = Task::find($id);
        return view('tasks.edit', ['task' => $task]);
     }
 
