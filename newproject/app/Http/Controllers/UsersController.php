@@ -13,4 +13,10 @@ class UsersController extends Controller
             'users' => User::get(),
         ]);
     }
+    public function show(User $user) 
+    {
+        return view('users.show', compact('user'));
+            //[ 'users' => $user,
+        // ]);
+    }
 }

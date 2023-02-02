@@ -8,7 +8,7 @@
 @section ('styles')
 <style>
     body {
-        background-color: indigo;
+        background-color: rgb(0, 130, 106);
     }
 </style>
 @endsection

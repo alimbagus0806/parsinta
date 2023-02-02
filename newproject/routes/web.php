@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileInformationController;
 
 // Route::get('/', function () {
@@ -40,4 +41,5 @@ Route::resource('tasks', TaskController::class);
 // Route::put ('tasks/{id}', [TaskController::class, 'update']);
 // Route::delete ('tasks/{id}', [TaskController::class, 'destroy']);
 
-Route::get('users', [UsersController::class, 'index']);
+Route::get('/users', [UsersController::class, 'index']);
+Route::get('/users/{user}', [UsersController::class, 'show'])->name('users.show');

@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
+use App\Http\Requests\TaskRequest;
 use App\Models\Task;
+use Illuminate\Http\Request;
+
+
 // use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
@@ -25,8 +28,12 @@ class TaskController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(TaskRequest $request)
     {
+        // $request->validate([
+        //     'list' => ['required','min:3', 'alpha_num'],
+        // ]);
+
         Task::create($request->all());
         // Task::create([
         //     'list' => $request->list,
