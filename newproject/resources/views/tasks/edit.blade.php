@@ -6,10 +6,9 @@
 <form action="/tasks/{{ $task ->id }}" method="post">
     @method('put')
     @csrf
-    <input type="text" name="list" value= "{{ $task ->list }}" placeholder="The name of the task">
-
-    <button class="btn btn-primary" type="submit">Update</button>
-</form>
+@include ('tasks._form', [
+        'submit'=> 'Update'
+])
 
 
 @endsection

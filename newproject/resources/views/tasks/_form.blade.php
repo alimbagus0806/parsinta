@@ -1,11 +1,13 @@
-<div class="justify-content-between">
+<input type="text" name="list" class= "form-control @error('list') is-invalid @enderror" placeholder="The name of the task">
+                
+@error('list')
 
-    <a class="btn btn-primary md-2 d-grid" href="/tasks/{{ $task ->id }}/edit">edit</a>
+<span class="invalid-feedback">{{ $message }}</span>
+    {{-- {{ $message }} --}}
 
-        <form action="/tasks/{{ $task -> id }}" method="post">
-        @csrf
-        @method ('delete')
-        <button class= "btn btn-danger" type="submit">delete</button>
-        </form>
+@enderror
 
 </div>
+
+<button class="btn btn-primary" type="submit">{{ $submit }}</button>
+

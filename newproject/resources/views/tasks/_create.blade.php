@@ -22,20 +22,11 @@
                 
                 <div class= "mb-2" >
                 
-                <input type="text" name="list" class= "form-control @error('list') is-invalid @enderror me-2" placeholder="The name of the task">
-                
-                @error('list')
-
-                <span class="invalid-feedback">{{ $message }}</span>
-                    {{-- {{ $message }} --}}
-
-                @enderror
-            
-                </div>
-                
-                <button class="btn btn-primary" type="submit">Add</button>
-
-            </form>
+                    @include ('tasks._form',[
+                        'submit' => 'Create'
+                    ] )
+    
+                </form>
 
       </div>
 </div>
