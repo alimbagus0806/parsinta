@@ -5,6 +5,7 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileInformationController;
+use App\Http\Controllers\RegistrationController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -43,3 +44,5 @@ Route::resource('tasks', TaskController::class);
 
 Route::get('/users', [UsersController::class, 'index']);
 Route::get('/users/{user}', [UsersController::class, 'show'])->name('users.show');
+Route::get('register', [RegistrationController::class, 'create'])->name('register');
+Route::post('register', [RegistrationController::class, 'store'])->name('register');
