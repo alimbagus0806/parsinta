@@ -8,7 +8,7 @@
     @csrf
     <input type="text" name="list" value= "{{ $task ->list }}" placeholder="The name of the task">
 
-    <button type="submit">Update</button>
+    <button class="btn btn-primary" type="submit">Update</button>
 </form>
 
 
