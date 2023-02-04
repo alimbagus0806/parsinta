@@ -1,4 +1,4 @@
-<input type="text" name="list" class= "form-control @error('list') is-invalid @enderror" placeholder="The name of the task">
+<input type="text" name="list" class= "form-control @error('list') is-invalid @enderror" value="{{ old('list') }}" placeholder="The name of the task">
                 
 @error('list')
 

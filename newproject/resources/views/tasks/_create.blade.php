@@ -20,7 +20,7 @@
     
                 @csrf
                 
-                <div class= "mb-2" >
+                <div class= "mb-2">
                 
                     @include ('tasks._form',[
                         'submit' => 'Create'

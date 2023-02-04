@@ -20,14 +20,14 @@
                 
                 {{ $index + 1 }} - {{ $task->list }} 
                 
-                <div class="justify-content-between">
+                <div class="d-flex justify-content-between ms-auto ml-2">
 
-                    <a class="btn btn-primary md-2 d-grid" href="/tasks/{{ $task ->id }}/edit">edit</a>
+                    <a class="btn btn-primary me-2 d-grid" href="/tasks/{{ $task ->id }}/edit">edit</a>
                 
                         <form action="/tasks/{{ $task -> id }}" method="post">
                         @csrf
                         @method ('delete')
-                        <button class= "btn btn-danger" type="submit">delete</button>
+                        <button class= "btn btn-danger ms-auto" type="submit">delete</button>
                         </form>
                 
                 </div>
