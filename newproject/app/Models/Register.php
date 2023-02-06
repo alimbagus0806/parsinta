@@ -10,4 +10,5 @@ class Register extends Model
     use HasFactory;
 
     protected $table = 'register';
+    protected $guarded = [];
 }
