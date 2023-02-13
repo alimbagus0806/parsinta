@@ -47,21 +47,29 @@
                                                 
 
                                             @enderror
-
-                                    
-                                    </div>
+                                        </div>
                                         <div class="mb-6 mt-4">
                                         <label for="password" class="form-label">Password</label>
-                                        <input type="password" value="{{ old('password') }}" name="password " id="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter Password" required>
+                                        <input type="password" value="{{ old('password') }}" name="password" id="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter Password" required>
                                         @error('password')
 
-                                        <span class="invalid-feedback">{{ $message }}</span>
-                                                    
+                                            <span class="invalid-feedback">{{ $message }}</span>
+                                                
 
                                         @enderror
 
                                         </div>
+                                        <div class="mb-6 mt-4">
+                                            <label for="password_confirmation" class="form-label">Confirm Password</label>
+                                            <input type="password" value="{{ old('password_confirmation') }}" name="password_confirmation" id="password_confirmation" class="form-control @error('password_confirmation') is-invalid @enderror" placeholder="Confirm Your Password" required>
+                                        @error('password_confirmation')
 
+                                            <span class="invalid-feedback">{{ $message }}</span>
+                                                
+
+                                        @enderror
+    
+                                            </div>
                                             <button class="mt-4 btn btn-primary"type="submit">Register</button>
 
                                         </form>
