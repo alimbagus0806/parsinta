@@ -4,13 +4,17 @@
     <div class="row">
         <div class="col-md-5">
 <div class="card">
+        @if (session()-> has ('success')) 
+        <div class="alert alert-success" role="alert">
+            {{ session()-> get('success') }}
+        </div>
+        @endif
     <div class="card-header">
         <div class="card-body">
 
             <main class="form-signin w-100 m-auto">
                 <form>
         
-                    <h1 class="h3 mb-3 fw-normal">Please Sign in</h1>
         
                     <div class="form-floating">
                         <input type="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" id="floatingInput" placeholder="name@example.com">
@@ -37,12 +41,14 @@
                     </div>
         
         
-                    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
         
                 </form>
             </main>
 
         </div>
+        <br>
+        <p class="ms-4">Forgot Password? <a href="/reset">Reset Password!</a></p>
         <br>
         <p class="ms-4">Haven't Register? <a href="/register">Register Now!</a></p>
 

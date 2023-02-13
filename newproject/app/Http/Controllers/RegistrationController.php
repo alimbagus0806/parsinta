@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\RegistrationRequest;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Hash;
 class RegistrationController extends Controller
 {
     public function create()
@@ -14,19 +14,12 @@ class RegistrationController extends Controller
 
     }
 
-    public function store(Request $request)
+    public function store(RegistrationRequest $request)
     {
 
-        $validated = $request->validate([
-            'name' => 'required', 'max:255',
-            'username' => 'required', 'min:3', 'max:255', 'unique:users', 'alpha_num',
-            'email' => 'required', 'email:dns', 'max:255', 'unique:users',
-            'password' => 'required', 'min:7', 'max:255', 'confirmed',
-        ]);
+        User::create($request->all());
 
-        User::create($validated);
-
-        return redirect('/login');
+        return redirect('/login')->with('success', 'Thank you, you are now registered, Please Login!');
 
     }
 }
