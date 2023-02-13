@@ -13,8 +13,8 @@
         <div class="card-body">
 
             <main class="form-signin w-100 m-auto">
-                <form>
-        
+                <form action="/login" method="post" class= "mt-10">
+                    @csrf
         
                     <div class="form-floating">
                         <input type="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" id="floatingInput" placeholder="name@example.com">

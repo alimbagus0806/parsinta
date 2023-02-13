@@ -48,6 +48,6 @@ Route::get('/users/{user}', [UsersController::class, 'show'])->name('users.show'
 
 // Route::get('register', [RegistrationController::class, 'index'])->name('register');
 Route::get('register', [RegistrationController::class, 'create'])->name('register');
-Route::post('register', [RegistrationController::class, 'store'])->name('register');
-Route::get('/login', [LoginController::class, 'index' ]);
-Route::post('/login', [LoginController::class, 'store' ]);
+Route::post('register', [RegistrationController::class, 'store']);
+Route::get('login', [LoginController::class, 'create' ])->name('login');
+Route::post('login', [LoginController::class, 'store' ]);
