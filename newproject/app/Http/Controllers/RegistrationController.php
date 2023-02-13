@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class RegistrationController extends Controller
@@ -22,18 +21,12 @@ class RegistrationController extends Controller
             'name' => 'required', 'max:255',
             'username' => 'required', 'min:3', 'max:255', 'unique:users', 'alpha_num',
             'email' => 'required', 'email:dns', 'max:255', 'unique:users',
-            'password' => 'required', 'min:7', 'max:255', 'alpha_num',
+            'password' => 'required', 'min:7', 'max:255', 'confirmed',
         ]);
 
-        // User::create([
-        //     'username' => $validated->username,
-        //     'name' => $validated->name,
-        //     'email' => $validated->email,
-        //     'password' => Hash::make($request->password),
+        User::create($validated);
 
-        // ]);
-
-        // return redirect('/');
+        return redirect('/login');
 
     }
 }
