@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RegistrationRequest;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
+
 class RegistrationController extends Controller
 {
     public function create()
@@ -17,8 +18,16 @@ class RegistrationController extends Controller
     public function store(RegistrationRequest $request)
     {
 
-        User::create($request->all());
+        $already_username = User::whereUsername($request->username)->first();
+        // dd($already_username);
 
+        if ($already_username){
+            throw ValidationException::withMessages([
+                'username' => 'username sudah ada',
+            ]);
+        }
+
+        User::create($request->all());
         return redirect('/login')->with('success', 'Thank you, you are now registered, Please Login!');
 
     }

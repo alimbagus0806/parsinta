@@ -17,7 +17,7 @@
                     @csrf
         
                     <div class="form-floating">
-                        <input type="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" id="floatingInput" placeholder="name@example.com">
+                        <input type="email" value="{{ old('email') }}" name="email"class="form-control @error('email') is-invalid @enderror" id="floatingInput" placeholder="name@example.com">
                         <label for="floatingInput">Email address</label>
                         @error('email')
 
@@ -27,8 +27,9 @@
                         @enderror
 
                     </div>
+
                     <div class="form-floating mb-4">
-                        <input type="password" value="{{ old('password') }}" class="form-control @error('password') is-invalid @enderror" id="floatingPassword" placeholder="Password">
+                        <input type="password" value="{{ old('password') }}" name="password" class="form-control @error('password') is-invalid @enderror" id="floatingPassword" placeholder="Password">
                         <label for="floatingPassword">Password</label>
 
                         @error('password')

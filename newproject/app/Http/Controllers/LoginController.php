@@ -18,13 +18,19 @@ class LoginController extends Controller
 
     }
 
+    public function logout() {
+        Auth::logout(); 
+        return view('login.create', [
+            'title' => 'Login'
+        ]);
+    }
+
     public function store(Request $request) {
 
         $request->validate([
-            'email' => ['required', 'email'],
+            'email' => ['required', 'min:5', 'email'],
             'password' => ['required'],
         ]);
-
 
         $user = User::whereEmail($request->email)->first();
 
@@ -34,10 +40,13 @@ class LoginController extends Controller
 
                return redirect('/')->with('success', 'You are now logged in');
             }
+            throw ValidationException::withMessages([
+                'password' => 'password anda salah',
+            ]);
         }
 
         throw ValidationException::withMessages([
-            'email' => 'Your provide does not match our records.',
+            'email' => 'email tidak temukan',
         ]);
 
     }
